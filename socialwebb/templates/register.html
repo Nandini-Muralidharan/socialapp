@@ -1,0 +1,205 @@
+<!-- <!DOCTYPE html>
+{%load static%} -->
+
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<!-- {% comment %} <html lang="en" dir="ltr"> -->
+<!-- <head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="{%static 'css/loginstyle.css'%}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+          <div class="col-4"></div>
+          <div class="col-4">
+              {%for m in messages%}
+           {%if m.level == DEFAULT_MESSAGE_LEVELS.ERROR%}
+           <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>{{m}}!</strong> You should check in on some of those fields below.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+           {%endif%}
+          
+           {%if m.level == DEFAULT_MESSAGE_LEVELS.SUCCESS%}
+           <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>{{m}}!</strong> You should check in on some of those fields below.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+           {%endif%}
+          
+  
+  
+          {%endfor%}
+          </div>
+  
+      </div>
+       <div class="col-4"></div>
+      </div>
+  </div>
+
+
+    <div class="center">
+      <h1>Register</h1>
+
+      <div ml-5>
+        {%for f in form%}
+          {{f.errors}}
+        {%endfor%}
+      </div>
+
+      <form method="post">
+        {%csrf_token%}
+        <div class="txt_field">
+            <input type="text" name="first_name" id="id_first_name" required>
+            <span></span>
+            <label>FirstName</label>
+          </div>
+          <div class="txt_field">
+            <input type="text" name="last_name" id="id_last_name" required>
+            <span></span>
+            <label>lastname</label>
+          </div>
+          <div class="txt_field">
+            <input type="email" name="email" id="id_email" required>
+            <span></span>
+            <label>email</label>
+          </div>
+
+        
+        <div class="txt_field">
+          <input type="text" name="username" id="id_username" required>
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" name="password1" id="id_password1" required>
+          <span></span>
+          <label>Password</label>
+        </div>
+        <div class="txt_field">
+            <input type="password" name="password2" id="id_password2" required>
+            <span></span>
+            <label>ConfirmPassword</label>
+          </div>
+       
+        <input type="submit" value="Register">
+        <div class="signup_link">
+          already have an account? <a href="{%url 'signin'%}">Signin</a>
+        </div>
+      </form>
+    </div>
+
+  </body> -->
+<!-- </html> {% endcomment %} -->
+
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/socialwebb/static/css/register.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            {%for m in messages%}
+         {%if m.level == DEFAULT_MESSAGE_LEVELS.ERROR%}
+         <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{{m}}!</strong> You should check in on some of those fields below.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+         {%endif%}
+        
+         {%if m.level == DEFAULT_MESSAGE_LEVELS.SUCCESS%}
+         <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{m}}!</strong> You should check in on some of those fields below.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+         {%endif%}
+        
+
+
+        {%endfor%}
+        </div>
+
+    </div>
+     <div class="col-4"></div>
+    </div>
+  </div>
+
+  <div class="loginBox"> 
+    <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
+    <h3>Sign Up Here</h3>
+    <div  class="head" >
+      <style>
+        .head{
+          color:white;
+        }
+      </style>
+      
+      {%for f in form%}
+      {{f.errors}}
+      {%endfor%}
+    </div>
+   
+    <form action="" method="post" name="form">
+      {%csrf_token%}
+      <div class="txt_field">
+        <input type="text" name="first_name" placeholder="first_name" id="id_first_name" required>
+      </div>
+      <div class="txt_field">
+        <input type="text" name="last_name" placeholder="last_name" id="id_last_name">
+
+      </div>
+      <div class="txt_field">
+        <input type="text" name="email" placeholder="email" id="id_email">
+
+      </div>
+      <div class="txt_field">
+        <input type="text" name="username" placeholder="username" id="id_username">
+
+      </div>
+
+      <div class="txt_field">
+        <input type="password" name="password1" placeholder="Password" id="id_password1" required>
+
+      </div>
+      <div class="txt_field">
+        <input type="password" name="password2" placeholder="Re-password" id="id_password2" required>
+      </div>
+<div>
+      <!-- <input type="submit"  value="Sign-up">
+      <a href="{%url 'signin'%}">Sign-Up</a><br> or
+        already have an account? <a href="{%url 'signin'%}">Signin</a> -->
+        <input type="submit" value="signup">
+        <div class="signup_link">
+          already have an account? <a href="{%url 'signin'%}">Signin</a>
+        </div>
+      </div>
+    </form>
+    
+     
+       
+
+     
+  </div>
+</body>
+
+</html>
+
+
+<!-- <form action="" method="post">
+  {% csrf_token %}
+
+  {{form.as_p}}
+  <input type="submit" value="submit">
+</form> -->

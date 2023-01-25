@@ -1,0 +1,61 @@
+<!-- <!DOCTYPE html>
+{%load static%}
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<!-- <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{%static 'css/loginstyle.css'%}">
+  </head>
+  <body>
+    <div class="center">
+      <h1>Login</h1>
+      <form method="post">
+        {%csrf_token%}
+        <div class="txt_field">
+          <input type="text" name="username" id="id_username" required>
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" name="password" id="id_password" required>
+          <span></span>
+          <label>Password</label>
+        </div> -->
+        <!-- <div class="pass">Forgot Password?</div>
+        <input type="submit" value="Login">
+        <div class="signup_link">
+          Not a member? <a href="{%url 'signup'%}">Signup</a>
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html> --> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/socialwebb/static/css/login.css">
+</head>
+<body>
+   <div class="loginBox"> <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
+    <h3>Sign in here</h3>
+    <form action="" method="post" name="form" class="bg-light">
+      {%csrf_token%}
+        <div class="inputBox"> <input id="uname" type="text" name="username" placeholder="Username"> 
+          <input id="pass" type="password" name="password" placeholder="Password"> </div> <input type="submit" name="" value="Login">
+    <a href="#">Forget Password<br> </a>
+        <!-- <p style="color: #59238F;">Signin</p> -->
+        <button class="btn-signin bg-light text-center" type="submit" value="login"></button>
+  </form> 
+
+    
+</div>
+</body>
+</html>

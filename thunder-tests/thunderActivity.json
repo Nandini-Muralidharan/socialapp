@@ -1,0 +1,55 @@
+[
+  {
+    "_id": "e94ed11c-9dcb-40d4-b52c-b5aa345f21ab",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:8000/user/",
+    "url": "localhost:8000/user/",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-11-07T14:05:08.322Z",
+    "modified": "2022-11-09T14:46:14.546Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [
+        {
+          "name": "username",
+          "value": "nandini21"
+        },
+        {
+          "name": "email",
+          "value": "nan12@gmail.com"
+        },
+        {
+          "name": "password",
+          "value": "password"
+        }
+      ]
+    },
+    "tests": []
+  },
+  {
+    "_id": "f425b583-fa62-431a-bfd4-917833dc51e9",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:8000/user/",
+    "url": "localhost:8000/user/",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-11-07T14:06:28.604Z",
+    "modified": "2022-11-07T14:08:25.852Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "abima",
+        "password": "passwors12"
+      }
+    },
+    "tests": []
+  }
+]

@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-box{
+    background: #ff574a;
+    text-align: center;
+    padding: 40px;
+    color: aqua;
+    position: relative;
+    border-radius: 20px;
+}
+

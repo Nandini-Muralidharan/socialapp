@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            {%for m in messages%}
+            {%if m.level == DEFAULT_MESSAGE_LEVELS.ERROR%}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>{{m}}!</strong> You should check in on some of those fields below.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {%endif%}
+
+            {%if m.level == DEFAULT_MESSAGE_LEVELS.SUCCESS%}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{m}}!</strong> You should check in on some of those fields below.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {%endif%}
+
+
+
+            {%endfor%}
+        </div>
+        <style>
+            body {
+                height: 500vh;
+
+                /* background-color:rgb(20, 149, 192); */
+                background-image: url('../../images/light.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+
+            }
+
+            .container-1 {
+                transform: translate(0, 50%);
+            }
+        </style>
+
+
+    </div>
+    <div class="col-4"></div>
+       
+</div>
+</div>
+
+<h1 class="justify-content-center">Welcome</h1>
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form action="" method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            {{form.as_p}}
+            <input type="submit" value="add">
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>
+
+
+
+
+<!-- post lists -->
+
+<div class="row gx-4 gx-lg-5 justify-content-center">
+    {%for p in posts%}
+    <div class="col-md-10 col-lg-8 col-xl-7">
+        <!-- Post preview-->
+        <div class="post-preview">
+            <a href="post.html">
+
+                <h2 class="post-title">{{p.title}}</h2>
+                {%if p.image%}
+                <div>
+                    <img src="{{p.image.url}}" alt="" class="h-50 w-50">
+                </div>
+                {%endif%}
+
+            </a>
+            <p class="post-meta">
+                {{p.likecount}} likes,
+
+                Posted by
+                <a href="#!">{{p.user}}</a>
+                on {{p.created_date}}
+
+                <a href="{%url 'liked_by-add' p.id %}" class="btn btn-warning btn-sm">like</a>
+
+            </p>
+        </div>
+        <div>
+            <form action="{%url 'add-comments' p.id %}" method="post">
+                {%csrf_token%}
+                <input type="text" class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end"
+                    placeholder="enter your comments" name="comments" class="form-control">
+                <button type="submit" class="btn btn-outline-info mt-2 btn-sm ">add</button>
+            </form>
+        </div>
+        <!-- accordion starts -->
+        <!-- <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <h5>comments</h5>
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                 
+              </div>
+            </div> -->
+
+        <!-- accordion ends -->
+
+
+
+
+
+        <h5 class="post-title"></h5>
+        {%for c in p.posts_comments%}
+        <div>
+            <div class="border rounded-pill p-2 border-info mt-3 w-60">
+
+                Comments={{c}}
+                user={{c.user}}
+                date={{c.created_date}}
+                <!-- likecount={{c.likecount}} -->
+            </div>
+        </div>
+        {%endfor%}
+
+
+        <!-- Divider-->
+        <hr class="my-4" />
+           
+    </div>
+    {%endfor%}
+</div>
+
+<!-- post ends -->
+{% endblock %}
